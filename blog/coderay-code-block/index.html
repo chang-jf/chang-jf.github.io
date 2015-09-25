@@ -5,15 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - Syslogd</title>
+  <title>CodeRay Code Block - Syslogd</title>
   <meta name="author" content="Chang, Jung-Feng">
 
   
-  <meta name="description" content="Blog Archive 2015 CodeRay Code Block
-Sep 25 2015 Math Support
-Sep 25 2015 Jekyll Tutorial
-Sep 25 2015 Octopress Tutorial
-Sep 25 2015 Recent Posts &hellip;">
+  <meta name="description" content="default 4 space code block #include &lt;stdio.h> #include &lt;stdlib.h> /malloc()/ void int2str(int, char *); int main()
+{ int i=123; char *s = (char &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -22,7 +19,7 @@ Sep 25 2015 Recent Posts &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://chang-jf.github.io/blog/archives/">
+  <link rel="canonical" href="http://chang-jf.github.io/blog/coderay-code-block/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Syslogd" type="application/atom+xml">
@@ -96,61 +93,126 @@ Sep 25 2015 Recent Posts &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">CodeRay Code Block</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-09-25T08:16:27+00:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>8:16 am</span></time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p>default 4 space code block
+    #include &lt;stdio.h>
+    #include &lt;stdlib.h>     /<em>malloc()</em>/</p>
 
-  
-  <h2>2015</h2>
+<pre><code>void int2str(int, char *);
 
-<article>
-  
-<h1><a href="/blog/coderay-code-block/">CodeRay Code Block</a></h1>
-<time datetime="2015-09-25T08:16:27+00:00" pubdate><span class='month'>Sep</span> <span class='day'>25</span> <span class='year'>2015</span></time>
+int main()
+{
+    int i=123;
+    char *s = (char *)malloc(sizeof(char));     //remember cast malloc output (char *)
+    int2str(i, s);
+    printf("%s\n", s);
+    return 0;
+}
+
+void int2str(int i, char *s){
+    sprintf(s, "%d", i);
+}
+</code></pre>
+
+<p>fency code block</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#include &lt;stdio.h&gt;
+</span><span class='line'>#include &lt;stdlib.h&gt;     /*malloc()*/
+</span><span class='line'>
+</span><span class='line'>void int2str(int, char *);
+</span><span class='line'>
+</span><span class='line'>int main()
+</span><span class='line'>{
+</span><span class='line'>    int i=123;
+</span><span class='line'>    char *s = (char *)malloc(sizeof(char));     //remember cast malloc output (char *)
+</span><span class='line'>    int2str(i, s);
+</span><span class='line'>    printf("%s\n", s);
+</span><span class='line'>    return 0;
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>void int2str(int i, char *s){
+</span><span class='line'>    sprintf(s, "%d", i);
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
 
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/math-support/">Math Support</a></h1>
-<time datetime="2015-09-25T08:00:09+00:00" pubdate><span class='month'>Sep</span> <span class='day'>25</span> <span class='year'>2015</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/jekyll-tutorial/">Jekyll Tutorial</a></h1>
-<time datetime="2015-09-25T07:29:02+00:00" pubdate><span class='month'>Sep</span> <span class='day'>25</span> <span class='year'>2015</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/octopress-tutorial/">Octopress Tutorial</a></h1>
-<time datetime="2015-09-25T07:23:18+00:00" pubdate><span class='month'>Sep</span> <span class='day'>25</span> <span class='year'>2015</span></time>
-
-
-</article>
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Chang, Jung-Feng</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2015-09-25T08:16:27+00:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>8:16 am</span></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://chang-jf.github.io/blog/coderay-code-block/" data-via="chang_jf" data-counturl="http://chang-jf.github.io/blog/coderay-code-block/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/math-support/" title="Previous Post: math support">&laquo; math support</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>

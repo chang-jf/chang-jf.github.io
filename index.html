@@ -9,34 +9,8 @@
   <meta name="author" content="Chang, Jung-Feng">
 
   
-  <meta name="description" content="edit source/_includes/custom/head.html and add below code piece 1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-&lt;!-- &hellip;">
+  <meta name="description" content="default 4 space code block #include &lt;stdio.h> #include &lt;stdlib.h> /malloc()/ void int2str(int, char *); int main()
+{ int i=123; char *s = (char &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -120,6 +94,93 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/coderay-code-block/">CodeRay Code Block</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-09-25T08:16:27+00:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>8:16 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>default 4 space code block
+    #include &lt;stdio.h>
+    #include &lt;stdlib.h>     /<em>malloc()</em>/</p>
+
+<pre><code>void int2str(int, char *);
+
+int main()
+{
+    int i=123;
+    char *s = (char *)malloc(sizeof(char));     //remember cast malloc output (char *)
+    int2str(i, s);
+    printf("%s\n", s);
+    return 0;
+}
+
+void int2str(int i, char *s){
+    sprintf(s, "%d", i);
+}
+</code></pre>
+
+<p>fency code block</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#include &lt;stdio.h&gt;
+</span><span class='line'>#include &lt;stdlib.h&gt;     /*malloc()*/
+</span><span class='line'>
+</span><span class='line'>void int2str(int, char *);
+</span><span class='line'>
+</span><span class='line'>int main()
+</span><span class='line'>{
+</span><span class='line'>    int i=123;
+</span><span class='line'>    char *s = (char *)malloc(sizeof(char));     //remember cast malloc output (char *)
+</span><span class='line'>    int2str(i, s);
+</span><span class='line'>    printf("%s\n", s);
+</span><span class='line'>    return 0;
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>void int2str(int i, char *s){
+</span><span class='line'>    sprintf(s, "%d", i);
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -320,6 +381,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/coderay-code-block/">CodeRay Code Block</a>
+      </li>
     
       <li class="post">
         <a href="/blog/math-support/">Math Support</a>

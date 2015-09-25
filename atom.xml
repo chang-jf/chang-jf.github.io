@@ -4,7 +4,7 @@
   <title><![CDATA[Syslogd]]></title>
   <link href="http://chang-jf.github.io/atom.xml" rel="self"/>
   <link href="http://chang-jf.github.io/"/>
-  <updated>2015-09-25T08:15:34+00:00</updated>
+  <updated>2015-09-25T08:20:49+00:00</updated>
   <id>http://chang-jf.github.io/</id>
   <author>
     <name><![CDATA[Chang, Jung-Feng]]></name>
@@ -12,6 +12,73 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[CodeRay Code Block]]></title>
+    <link href="http://chang-jf.github.io/blog/coderay-code-block/"/>
+    <updated>2015-09-25T08:16:27+00:00</updated>
+    <id>http://chang-jf.github.io/blog/coderay-code-block</id>
+    <content type="html"><![CDATA[<p>default 4 space code block
+    #include &lt;stdio.h>
+    #include &lt;stdlib.h>     /<em>malloc()</em>/</p>
+
+<pre><code>void int2str(int, char *);
+
+int main()
+{
+    int i=123;
+    char *s = (char *)malloc(sizeof(char));     //remember cast malloc output (char *)
+    int2str(i, s);
+    printf("%s\n", s);
+    return 0;
+}
+
+void int2str(int i, char *s){
+    sprintf(s, "%d", i);
+}
+</code></pre>
+
+<p>fency code block</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#include &lt;stdio.h&gt;
+</span><span class='line'>#include &lt;stdlib.h&gt;     /*malloc()*/
+</span><span class='line'>
+</span><span class='line'>void int2str(int, char *);
+</span><span class='line'>
+</span><span class='line'>int main()
+</span><span class='line'>{
+</span><span class='line'>    int i=123;
+</span><span class='line'>    char *s = (char *)malloc(sizeof(char));     //remember cast malloc output (char *)
+</span><span class='line'>    int2str(i, s);
+</span><span class='line'>    printf("%s\n", s);
+</span><span class='line'>    return 0;
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>void int2str(int i, char *s){
+</span><span class='line'>    sprintf(s, "%d", i);
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Math Support]]></title>
@@ -354,7 +421,7 @@ date:   2015-09-22 16:01:40</p>
 
 
 <blockquote><p><strong>title</strong>: Your awesome title
-<strong>email</strong>: <a href="&#109;&#97;&#x69;&#108;&#x74;&#111;&#x3a;&#x79;&#111;&#x75;&#x72;&#x2d;&#x65;&#109;&#97;&#105;&#108;&#64;&#x64;&#x6f;&#x6d;&#97;&#105;&#x6e;&#x2e;&#x63;&#111;&#x6d;">&#x79;&#111;&#117;&#114;&#45;&#x65;&#109;&#x61;&#x69;&#108;&#64;&#100;&#x6f;&#x6d;&#x61;&#x69;&#x6e;&#46;&#x63;&#x6f;&#109;</a>
+<strong>email</strong>: <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x79;&#111;&#117;&#x72;&#x2d;&#x65;&#x6d;&#x61;&#x69;&#x6c;&#64;&#100;&#111;&#109;&#97;&#x69;&#x6e;&#46;&#99;&#x6f;&#109;">&#x79;&#111;&#x75;&#x72;&#45;&#x65;&#109;&#97;&#105;&#x6c;&#x40;&#100;&#x6f;&#109;&#x61;&#105;&#110;&#46;&#x63;&#x6f;&#109;</a>
 <strong>description</strong>: > # this means to ignore newlines until &ldquo;baseurl:&rdquo;
 Write an awesome description for your new site here. You can edit this
 line in _config.yml. It will appear in your document head meta (for
