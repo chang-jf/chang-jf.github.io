@@ -3,12 +3,11 @@
 # ----------------------- #
 
 url: http://chang-jf.github.io
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+title: Syslogd
+subtitle: $ cat life >/dev/null 2>&1
+author: Chang, Jung-Feng
 simple_search: https://www.google.com/search
 description:
-
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
 # http://www.ruby-doc.org/core-1.9.2/Time.html#method-i-strftime
@@ -27,7 +26,8 @@ email:
 
 # If publishing to a subdirectory as in http://site.com/project set 'root: /project'
 root: /
-permalink: /blog/:year/:month/:day/:title/
+#permalink: /blog/:year/:month/:day/:title/
+permalink: /blog/:title/
 source: source
 destination: public
 plugins: plugins
