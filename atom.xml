@@ -4,7 +4,7 @@
   <title><![CDATA[Syslogd]]></title>
   <link href="http://chang-jf.github.io/atom.xml" rel="self"/>
   <link href="http://chang-jf.github.io/"/>
-  <updated>2015-09-25T07:26:56+00:00</updated>
+  <updated>2015-09-25T07:30:00+00:00</updated>
   <id>http://chang-jf.github.io/</id>
   <author>
     <name><![CDATA[Chang, Jung-Feng]]></name>
@@ -12,6 +12,306 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Jekyll Tutorial]]></title>
+    <link href="http://chang-jf.github.io/blog/jekyll-tutorial.html/"/>
+    <updated>2015-09-25T07:29:02+00:00</updated>
+    <id>http://chang-jf.github.io/blog/jekyll-tutorial</id>
+    <content type="html"><![CDATA[<h1>Jekyll tutorial</h1>
+
+<p><em>介紹Jekyll的安裝, 工作流程以及調整方式</em></p>
+
+<h2>摘要</h2>
+
+<ul>
+<li><p>建立環境</p>
+
+<ul>
+<li>安裝Jekyll</li>
+<li>開通GitHub blog</li>
+<li>上傳公鑰</li>
+<li>調整編輯環境</li>
+</ul>
+</li>
+<li><p>使用Jekyll</p>
+
+<ul>
+<li>New Blog</li>
+<li>同步GitHub上已有的Blog內容</li>
+<li>New Post</li>
+<li>Build Blog</li>
+<li>本地預覽</li>
+<li>發佈至GitHub</li>
+</ul>
+</li>
+<li><p>細部修改</p>
+
+<ul>
+<li>基本調整</li>
+<li>修改主題</li>
+<li>文章鍊結型式</li>
+<li>繼續閱讀按鈕</li>
+<li>變更markdown render為RedCarpet</li>
+<li>tag cloud</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>環境</h2>
+
+<ul>
+<li>Ubuntu 15.04 vivid</li>
+<li>vim 7.4 1-488</li>
+</ul>
+
+
+<h2>前置條件</h2>
+
+<ul>
+<li>了解linux, git, vim基礎操作</li>
+<li>已有git帳號</li>
+<li>需安裝ruby-dev</li>
+</ul>
+
+
+<h2>參考</h2>
+
+<p><a href="http://jekyllrb.com/docs/installation/" title="Jekyll安裝文件">Jekyll安裝文件</a></p>
+
+<h3>建立環境</h3>
+
+<h4>安裝Jekyll <em>redcarpet內定已安裝</em></h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo apt-get install build-essential ruby-dev
+</span><span class='line'><span class="nv">$ </span>sudo gem install execjs therubyracer jekyll
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><del>- <a href="https://github.com/jekyll/jekyll-compose" title="jekyll/jekyll-compose">jekyll/jekyll-compose</a> </del>
+<del>簡化Jekyll撰寫文章的流程 </del>
+<del>``` </del>
+~~    $ cd ~/blogname ~~
+~~    $ gem install jekyll-compose ~~
+<del>``` </del>
+<del>使用方法: </del>
+<del><code>$ jekyll-compose {draft | post | publish}</code> </del>
+<del>draft &ldquo;NAME&rdquo;: Create a new draft post with the given NAME </del>
+<del>post &ldquo;NAME&rdquo;: Create a new post with the given NAME </del>
+<del>publish <em>drafts/my_draft.md [&ndash;date yyyy-mm-dd]: Moves a draft into the </em>posts directory </del></p>
+
+<h4>開通GitHub blog</h4>
+
+<p>在GitHub上新增一個名為<em>username/username.github.io</em>的repository, 將username置換為自己的GitHub帳號
+Repository的access url會是git@github.com:username/username.github.io.git</p>
+
+<h4>上傳公鑰</h4>
+
+<p>使用ssh-keygen產生公鑰並貼上GitHub</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>ssh-keygen
+</span><span class='line'><span class="nv">$ </span>cat ~/.ssh/id_rsa.pub
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="http://github.com" title="GitHub">GitHub</a> -> Account Settings -> SSH Keys ->貼上公鑰檔案內容 -> Add key
+測試是否有效</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>ssh -T git@github.com
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>如果結果如下, 公鑰設置成功:</p>
+
+<blockquote><p>Hi <em>username</em>! You&rsquo;ve successfully authenticated, but GitHub does not provide shell access.</p></blockquote>
+
+<h4>調整編輯環境 <em>Vim</em></h4>
+
+<p>使用vundle安裝 - 將下列敘述加入~/.vimrc並執行<code>:PluginInstall</code></p>
+
+<p><del>Plugin &lsquo;tpope/vim-markdown&rsquo;</del>
+~~ Plugin &lsquo;jtratner/vim-flavored-markdown&rsquo; ~~</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>Plugin <span class="s1">&#39;gabrielelana/vim-markdown&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><del>在~/.vimrc內加入強制指定檔案格式為ghmarkdown</del></p>
+
+<p><del>```</del>
+<del>augroup markdown</del>
+~~    au!~~
+~~    au BufNewFile,BufRead <em>.md,</em>.markdown setlocal filetype=ghmarkdown~~
+<del>augroup END</del>
+<del>```</del></p>
+
+<h3>使用Jekyll</h3>
+
+<p>大部份jekyll的命令都可以簡寫, 例如'jekyll build' == &lsquo;jekyll b&rsquo;, 直接執行jekyll有提示.</p>
+
+<h4>New Blog ####</h4>
+
+<p><em>以~/blogname為範例</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="sb">`</span><span class="nv">$ </span><span class="nb">cd</span> ~/<span class="sb">`</span>
+</span><span class='line'><span class="sb">`</span><span class="nv">$ </span>jekyll new blogname<span class="sb">`</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>同步GitHub上已有的Blog內容</h4>
+
+<p><em>通常是在新的機器上編輯自己的blog, 所以不需要<code>$ jekyll new blogname</code>, 直接開一個目錄把blog pull下來即可</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span><span class="nb">cd </span>blogname
+</span><span class='line'><span class="nv">$ </span>git init
+</span><span class='line'><span class="nv">$ </span>git config --global user.name <span class="s2">&quot;Your Name&quot;</span>
+</span><span class='line'><span class="nv">$ </span>git config --global user.email <span class="s2">&quot;your_mail@address&quot;</span>
+</span><span class='line'><span class="nv">$ </span>git remote add origin git@github.com:username/username.github.io.git
+</span><span class='line'><span class="nv">$ </span>git pull origin master
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>New Post</h4>
+
+<p>Markdown文件位置位於 <em>./blogname/_posts/</em> 文檔格式為:</p>
+
+<ol>
+<li>檔名為yyyy-mm-dd-filename.markdown <em>副檔名可改為.md, 見<strong>基本配置</strong>說明</em></li>
+<li>檔案內容開頭為:</li>
+</ol>
+
+
+<blockquote><p>-&ndash;
+layout: post
+title:  &ldquo;<strong>Welcome to Jekyll!</strong>&rdquo;
+date:   2015-09-22 16:01:40</p>
+
+<h2>categories: <strong>jekyll update</strong></h2></blockquote>
+
+<p>title與categories可以自己指定, 從最下方的<code>---</code>的下一行接著寫
+<em>每次都要這麼搞有點煩, 所以看是自己寫script做掉, 還是去找plugin處理</em></p>
+
+<h4>Build Blog</h4>
+
+<p><code>$ jekyll build --source &lt;source&gt; --destination &lt;destination&gt; --watch</code>
+- 不指定參數 &ndash; 將當前目錄內容輸出至./_site
+- &ndash;source &ndash; 指定source directory, md原始檔的存放目錄
+- &ndash;destination <destination> &ndash; 指定destination directory, Jekyll產生出來可以發佈的靜態網站內容
+- &ndash;watch &ndash;監看source directory的原始檔案, 有變更就重新build到destination directory</p>
+
+<h4>本地預覽</h4>
+
+<p><code>$ jekyll serve --detach --no-watch</code>
+- 不指定參數 &ndash; 預覽伺服器開在<a href="http://localhost:4000,">http://localhost:4000,</a> 會自動監看原始檔案, 一有變動就自動build
+- &ndash;detach &ndash; 預覽伺服器轉到幕後執行, 需要關閉的時候透過ps找到pid 使用 kill 停掉
+- &ndash;no-watch &ndash; 不監看原始檔案, 要自己手動build</p>
+
+<h4>發佈至GitHub</h4>
+
+<p>如果是第一次deploy需要設定遠端位址</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span><span class="nb">cd</span> ~/blogname
+</span><span class='line'><span class="nv">$ </span>git init
+</span><span class='line'><span class="nv">$ </span>git config --global user.name <span class="s2">&quot;Your Name&quot;</span>
+</span><span class='line'><span class="nv">$ </span>git config --global user.email <span class="s2">&quot;your_mail@address&quot;</span>
+</span><span class='line'><span class="nv">$ </span>git remote add origin git@github.com:username/username.github.io.git
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>接下來每次新增文章後, 將_site的內容推上去即可</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>git add .
+</span><span class='line'>git commit -m <span class="s2">&quot;blog updated&quot;</span>
+</span><span class='line'>git push -u origin master
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>細部修改</h3>
+
+<ul>
+<li>基本調整 <em><a href="http://jekyllrb.com/docs/configuration/" title="Jekyll Configuration">Jekyll Configuration</a></em>
+
+<ul>
+<li>編輯~/blogname/_config.yml, 調整title, email, description, url, twitter_username, github_username</li>
+</ul>
+</li>
+</ul>
+
+
+<blockquote><p><strong>title</strong>: Your awesome title
+<strong>email</strong>: <a href="&#109;&#97;&#x69;&#108;&#116;&#111;&#x3a;&#x79;&#111;&#x75;&#x72;&#x2d;&#101;&#x6d;&#x61;&#x69;&#x6c;&#x40;&#100;&#x6f;&#x6d;&#97;&#x69;&#x6e;&#x2e;&#x63;&#111;&#x6d;">&#x79;&#111;&#117;&#114;&#45;&#101;&#109;&#x61;&#105;&#108;&#64;&#100;&#x6f;&#x6d;&#97;&#x69;&#110;&#x2e;&#x63;&#111;&#x6d;</a>
+<strong>description</strong>: > # this means to ignore newlines until &ldquo;baseurl:&rdquo;
+Write an awesome description for your new site here. You can edit this
+line in _config.yml. It will appear in your document head meta (for
+Google search results) and in your feed.xml site description.
+baseurl: &ldquo;&rdquo; # the subpath of your site, e.g. /blog/
+<strong>url</strong>: &ldquo;<a href="http://yourdomain.com">http://yourdomain.com</a>&rdquo; # the base hostname &amp; protocol for your site
+<strong>twitter_username</strong>: jekyllrb
+<strong>github_username</strong>:  jekyll</p></blockquote>
+
+<ul>
+<li>修改主題
+
+<ul>
+<li><a href="http://jekyllthemes.org/" title="Jekyll Themes">Jekyll Themes</a></li>
+<li><a href="http://yongyuan.name/blog/collect-jekyll-theme.html" title="Jekyll 主題收藏">Jekyll 主題收藏</a></li>
+<li><a href="http://www.zhanxin.info/jekyll/2013-08-11-jekyll-theme-kunka.html" title="Jekyll 博客主題 Kunka">Jekyll 博客主題 Kunka</a></li>
+<li><a href="http://themes.jekyllbootstrap.com/" title="Jekyll Bootstrap Theme explorer">Jekyll Bootstrap Theme explorer</a></li>
+<li><a href="https://github.com/jekyll/jekyll/wiki/Themes" title="Jekyll/jekyll on
+github">jekyll/jekyll on
+GitHub</a></li>
+</ul>
+</li>
+<li><p>Plugins</p>
+
+<ul>
+<li><a href="http://www.jekyll-plugins.com/" title="Jekyll-Plugins">Jekyll-Plugins</a></li>
+<li><a href="https://jekyllrb.com/docs/plugins/" title="Jekyll Documentation-Plugins">Jekyll Documentation-Plugins</a></li>
+</ul>
+</li>
+<li><p>文章鍊結型式</p></li>
+<li><p>繼續閱讀按鈕</p></li>
+<li><p>指定markdown render
+Default是krandowm, 改為RedCarpet, 效能較佳, 將下列選項加入_config.yml</p></li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>redcarpet:
+</span><span class='line'>extensions: <span class="o">[</span><span class="s2">&quot;no_intra_emphasis&quot;</span>, <span class="s2">&quot;fenced_code_blocks&quot;</span>, <span class="s2">&quot;autolink&quot;</span>, <span class="s2">&quot;strikethrough&quot;</span>, <span class="s2">&quot;superscript&quot;</span>, <span class="s2">&quot;with_toc_data&quot;</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>tag cloud</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopress Tutorial]]></title>

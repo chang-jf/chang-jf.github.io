@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Syslogd</title>
+  <title>Jekyll Tutorial - Syslogd</title>
   <meta name="author" content="Chang, Jung-Feng">
 
   
@@ -25,7 +25,7 @@ Build Blog
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://chang-jf.github.io/index.html">
+  <link rel="canonical" href="http://chang-jf.github.io/blog/jekyll-tutorial.html/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Syslogd" type="application/atom+xml">
@@ -70,15 +70,12 @@ Build Blog
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/jekyll-tutorial.html/">Jekyll Tutorial</a></h1>
+      <h1 class="entry-title">Jekyll Tutorial</h1>
     
     
       <p class="meta">
@@ -94,7 +91,7 @@ Build Blog
   </header>
 
 
-  <div class="entry-content"><h1>Jekyll tutorial</h1>
+<div class="entry-content"><h1>Jekyll tutorial</h1>
 
 <p><em>介紹Jekyll的安裝, 工作流程以及調整方式</em></p>
 
@@ -387,197 +384,46 @@ Default是krandowm, 改為RedCarpet, 效能較佳, 將下列選項加入_config.
 </ul>
 
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Chang, Jung-Feng</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2015-09-25T07:29:02+00:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>7:29 am</span></time>
+      
+
+
+    </p>
     
-      <h1 class="entry-title"><a href="/blog/octopress-tutorial.html/">Octopress Tutorial</a></h1>
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://chang-jf.github.io/blog/jekyll-tutorial.html/" data-via="" data-counturl="http://chang-jf.github.io/blog/jekyll-tutorial.html/" >Tweet</a>
+  
+  
+  
+</div>
+
     
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-09-25T07:23:18+00:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>7:23 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h4>Octopress安裝流程</h4>
-
-<ul>
-<li>選定~/Dropbox/blog作為blog內容的存放點</li>
-<li>在<a href="https://github.com">GitHub</a> &ldquo;GitHub"上註冊帳號後新增一個repository,<br/>
-名稱為username.github.io<br/>
-這邊username要換成申請到的帳號名稱,<br/>
-新增成功後頁面會有一個ssh link像這樣
-
-<blockquote><p>git@github.com:[username]/[username].github.io.git
-先抄在旁邊備用</p></blockquote></li>
-<li>本機端安裝必要套件並設定local repository</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install nodejs ruby-dev build-essential
-</span><span class='line'>$ cd ~/Dropbox/
-</span><span class='line'>$ git clone git://github.com/imathis/octopress.git blog
-</span><span class='line'>$ cd blog
-</span><span class='line'>$ sudo gem install bundler execjs therubyracer
-</span><span class='line'>$ bundle install
-</span><span class='line'>$ rake install          //安裝默認主題
-</span><span class='line'>$ rake preview</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>在瀏覽器上打開<a href="http://localhost:4000">http://localhost:4000</a> with browser, 檢查預設blog是不是已經起來</li>
-<li>ssh-keygen製作公鑰,<br/>
-ssh-keygen會要求指定key的存放位置, 照預設按enter即可,<br/>
-當ssh-keygen要求輸入passphrase時按照要求輸入兩次, 我們要用的key會放在~/.ssh/id_rsa.pub內<br/>
-ssh key的作用是讓GitHub識別更新內容是否為本人, passphrase則是作為第2道防線使用,<br/>
-有設定的話日後更新blog內容時候還會要求輸入現在設好的passphrase, 嫌麻煩可以留空enter兩次不使用</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ ssh-keygen</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>將個人公鑰存進GitHub</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>https://github.com/settings/profile -&gt; SSH Keys -&gt; Add SSH key,貼上~/.ssh/id_rsa.pub的內容</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>測試連線</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ ssh -T git@github.com</span></code></pre></td></tr></table></div></figure>
-
-
-<p>  如果做的都對的話, 應該可以看到這樣的訊息, 到這裡連線就算準備好了</p>
-
-<blockquote><p>Hi [username]! You&rsquo;ve successfully authenticated, but GitHub does not provide shell access.</p></blockquote>
-
-<ul>
-<li>初始化local repository並且推上GitHub</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ cd ~/Dropbox/blog
-</span><span class='line'>$ git config --global user.name "username"
-</span><span class='line'>$ git config --global user.email "username@gmail.com"
-</span><span class='line'>$ rake setup_github_pages
-</span><span class='line'># 貼上新增repository時拿到的ssh link
-</span><span class='line'>$ rake generate
-</span><span class='line'>$ rake deploy</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>在瀏覽器打開<a href="http://">http://</a>[username].github.io, 確定blog已經上傳</li>
-<li>這時候觀察GitHub上存的東西會發現存的是~/Dropbox/blog/public下的內容,
-就是Octopress產生出來的blog,
-我們希望自己辛苦寫的markdown原始檔以及調整過的Octopress設定也能放上GitHub,
-但是又不想干擾到blog的呈現, 因此我們使用分支的概念處理,
-將~/Dropbox/blog整個目錄納入source這個分支</li>
-<li>GitHub上開分支<a href="http://sushihangover.github.io/octopress-backing-up-your-source-directory/" title="back up your source">備份原始碼</a> (主要是備份設定與source目錄下的blog原始碼, 特別是其中的_posts目錄)</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ git add .
-</span><span class='line'>$ git commit -m "Blog updated"
-</span><span class='line'>$ git push origin source</span></code></pre></td></tr></table></div></figure>
-
-
-<pre><code>到此為止GitHub上總共出現了兩個分支, master分支管理blog的呈現內容,
-就是Octopress產生出來的東西, source分支管理整個Octopress, 包含原始檔,
-設定等等.
-注意在文章中git pull/push後面跟著的分支名稱, 一般來說不用管master分支,
-那個使用Octopress的rake gen_deploy會在產生內容的同時幫你更新上去.
-當換了新電腦, blog有新文章, 或是調整過設定想存檔, git
-pull/push後面跟的就是source分支
-</code></pre>
-
-<h3>在新電腦上編輯 - 將GitHub上的最新內容同步到local repository</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ mkdir ~/Dropbox/blog
-</span><span class='line'>$ cd ~/Dropbox/blog
-</span><span class='line'>$ git init
-</span><span class='line'>$ git config --global user.name "username"
-</span><span class='line'>$ git config --global user.email "username@gmail.com"
-</span><span class='line'>$ git pull origin source</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>日常編輯</h4>
-
-<p>檔案的位置會放在~/Dropbox/blog/source/_posts/下, 檔名看起來像是yyyy-mm-dd-Post-Title.markdown <br/>
-yyyy-mm-dd是當前日期,這個檔案可以vim直接以markdown語法編輯, 檔案內有預先放進去的檔頭內容不要動 <br/>
-編輯完以rake gen_deploy同時生成頁面並發佈至github.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ cd ~/Dropbox/blog
-</span><span class='line'>$ rake new_post["Post Title"]
-</span><span class='line'>$ vim ~/Dropbox/blog/source/\_posts/yyyy-mm-dd-Post-Title.markdown
-</span><span class='line'>$ rake gen_deploy</span></code></pre></td></tr></table></div></figure>
-
-
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/octopress-tutorial.html/" title="Previous Post: Octopress tutorial">&laquo; Octopress tutorial</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
 </div>
-  
-  
 
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
@@ -601,6 +447,7 @@ yyyy-mm-dd是當前日期,這個檔案可以vim直接以markdown語法編輯, �
 
   
 </aside>
+
 
     </div>
   </div>
