@@ -4,7 +4,7 @@
   <title><![CDATA[Syslogd]]></title>
   <link href="http://chang-jf.github.io/atom.xml" rel="self"/>
   <link href="http://chang-jf.github.io/"/>
-  <updated>2015-09-25T08:10:34+00:00</updated>
+  <updated>2015-09-25T08:15:34+00:00</updated>
   <id>http://chang-jf.github.io/</id>
   <author>
     <name><![CDATA[Chang, Jung-Feng]]></name>
@@ -354,7 +354,7 @@ date:   2015-09-22 16:01:40</p>
 
 
 <blockquote><p><strong>title</strong>: Your awesome title
-<strong>email</strong>: <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#x6f;&#58;&#x79;&#111;&#x75;&#114;&#45;&#101;&#109;&#97;&#x69;&#x6c;&#64;&#100;&#111;&#109;&#x61;&#x69;&#110;&#46;&#x63;&#111;&#x6d;">&#x79;&#111;&#117;&#114;&#x2d;&#x65;&#x6d;&#x61;&#x69;&#x6c;&#x40;&#x64;&#111;&#x6d;&#97;&#105;&#x6e;&#46;&#x63;&#111;&#109;</a>
+<strong>email</strong>: <a href="&#109;&#97;&#x69;&#108;&#x74;&#111;&#x3a;&#x79;&#111;&#x75;&#x72;&#x2d;&#x65;&#109;&#97;&#105;&#108;&#64;&#x64;&#x6f;&#x6d;&#97;&#105;&#x6e;&#x2e;&#x63;&#111;&#x6d;">&#x79;&#111;&#117;&#114;&#45;&#x65;&#109;&#x61;&#x69;&#108;&#64;&#100;&#x6f;&#x6d;&#x61;&#x69;&#x6e;&#46;&#x63;&#x6f;&#109;</a>
 <strong>description</strong>: > # this means to ignore newlines until &ldquo;baseurl:&rdquo;
 Write an awesome description for your new site here. You can edit this
 line in _config.yml. It will appear in your document head meta (for
